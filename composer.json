@@ -1,0 +1,29 @@
+{
+    "name": "imanghafoori/crudbooster-statistics",
+    "description": "A plug-in for CrudBooster CMS to add statistics functionality",
+    "keywords": ["crudbooster", "crudbooster-statistics", "crudbooster statistics", "crudbooster plugin"],
+    "license": "MIT",
+    "homepage": "https://github.com/imanghafoori1/crudbooster-statistics",
+    "authors": [
+        {
+            "name": "Iman Ghafoori",
+            "email": "imanghafoori1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "crocodicstudio/crudbooster": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imanghafoori\\CrudBoosterStats\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Imanghafoori\\CrudBoosterStats\\CbStatisticsServiceProvider"
+            ]
+        }
+    }
+}
