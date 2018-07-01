@@ -3,5 +3,5 @@
 Statistics Module for Crudbooster CMS
 
 ```
-composer require imanghafoori/crudbooster-stats
+composer require imanghafoori/crudbooster-statistics
 ```
