@@ -9,7 +9,7 @@
             <div class="icon">
                 <i class="ion [icon]"></i>
             </div>
-            <a href="[link]" id='link{{$componentID}}' class="small-box-footer" style="display:block;">Más información<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="[link]" id='link{{$componentID}}' class="small-box-footer" style="display:block;">More info <i class="fa fa-arrow-circle-right"></i></a>
             <script type="text/javascript"> 
             	if(document.getElementById('link{{$componentID}}').href != "[link]"){ 
             		document.getElementById('link{{$componentID}}').style="display:none;"; 
