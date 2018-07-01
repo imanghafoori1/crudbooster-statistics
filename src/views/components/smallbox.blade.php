@@ -1,7 +1,7 @@
 @if($command=='layout')
     <div id='{{$componentID}}' class='border-box'>
 
-        <div class="small-box [color]">
+        <div class="small-box" style='background-color:[color]'>
             <div class='inner inner-box'>
                 <h3>[sql]</h3>
                 <p>[name]</p>
@@ -9,14 +9,18 @@
             <div class="icon">
                 <i class="ion [icon]"></i>
             </div>
-            <a href="[link]" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="[link]" id='link{{$componentID}}' class="small-box-footer" style="display:block;">Más información<i class="fa fa-arrow-circle-right"></i></a>
+            <script type="text/javascript"> 
+            	if(document.getElementById('link{{$componentID}}').href != "[link]"){ 
+            		document.getElementById('link{{$componentID}}').style="display:none;"; 
+            	}
+            </script>
         </div>
 
         <div class='action pull-right'>
-            <a href='javascript:void(0)' data-componentid='{{$componentID}}' data-name='Small Box'
-               class='btn-edit-component'><i class='fa fa-pencil'></i></a> &nbsp;
-            <a href='javascript:void(0)' data-componentid='{{$componentID}}' class='btn-delete-component'><i
-                        class='fa fa-trash'></i></a>
+            <a href='javascript:void(0)' data-componentid='{{$componentID}}' data-name='Small Box' class='btn-edit-component'><i class='fa fa-pencil'></i></a>
+            &nbsp;
+            <a href='javascript:void(0)' data-componentid='{{$componentID}}' class='btn-delete-component'><i class='fa fa-trash'></i></a>
         </div>
     </div>
 @elseif($command=='configuration')
@@ -36,24 +40,19 @@
 
         <div class="form-group">
             <label>Color</label>
-            <select class='form-control' required name='config[color]'>
-                <option {{(@$config->color == 'bg-green')?"selected":""}} value='bg-green'>Green</option>
-                <option {{(@$config->color == 'bg-red')?"selected":""}} value='bg-red'>Red</option>
-                <option {{(@$config->color == 'bg-aqua')?"selected":""}} value='bg-aqua'>Aqua</option>
-                <option {{(@$config->color == 'bg-yellow')?"selected":""}} value='bg-yellow'>Yellow</option>
-            </select>
+            <input class="form-control" type="color" required name='config[color]' value='{{@$config->color}}' />
         </div>
 
         <div class="form-group">
             <label>Link</label>
-            <input class="form-control" required name='config[link]' type='text' value='{{@$config->link}}'/>
+            <input class="form-control" name='config[link]' type='text' value='{{@$config->link}}'/>
         </div>
 
         <div class="form-group">
             <label>Count (SQL QUERY)</label>
             <textarea name='config[sql]' rows="5" class='form-control'>{{@$config->sql}}</textarea>
-            <div class="help-block">Make sure the sql query are correct unless the widget will be broken. Mak sure give
-                the alias name each column. You may use alias [SESSION_NAME] to get the session
+            <div class="help-block">Make sure the sql query are correct unless the widget will be broken. Mak sure give the alias name each column. You may use
+                alias [SESSION_NAME] to get the session
             </div>
         </div>
 
