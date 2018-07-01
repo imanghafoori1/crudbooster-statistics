@@ -34,7 +34,7 @@
 
         <div class="form-group">
             <label>Icon By Ionicons</label>
-            <input class="form-control" required name='config[icon]' type='text' value='{{@$config->icon}}'/>
+            <input class="form-control" name='config[icon]' type='text' value='{{@$config->icon}}'/>
             E.g : ion-bag . You can find more icon, checkout at <a target='_blank' href='http://ionicons.com/'>ionicons.com</a>
         </div>
 
